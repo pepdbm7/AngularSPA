@@ -1,0 +1,17 @@
+<div class="mt-5 mb-5">
+  <h2>About us</h2>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis eveniet similique suscipit repellendus itaque. Consequatur laboriosam maiores ex dolor sint nihil cum eligendi illo asperiores. Maiores assumenda impedit eum illum.</p>
+
+  <div class="card-deck">
+      <div class="card" *ngFor="let item of team, index as i">
+        <!--using ngFor to print each member, and use its index for the route:-->
+        <div class="text-center m-4 image__container">
+          <img src="../../assets/img/{{ i+1 }}.PNG" class="card-img-top .img-thumbnail profile__img" alt="member profile picture">
+        </div>
+        <h3 class="card-title member__name text-center">{{ item.name }}</h3>
+        <h6 class="card-text mt-5"> <span>Speciality:</span> {{ item.speciality }}</h6>
+        <h6 class="card-text mb-5"> <span>Description:></span> <a [routerLink]="['/team',i]"> More info</a></h6>
+      </div>
+  </div>
+
+</div>
